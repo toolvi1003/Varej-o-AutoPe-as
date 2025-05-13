@@ -1,0 +1,10 @@
+Options -MultiViews
+RewriteEngine On
+
+# Se o seu site está em http://localhost/xampp/varejaoautopeças/publico/
+# o RewriteBase deve ser /xampp/varejaoautopeças/publico/
+RewriteBase /
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php?url=$1 [L,QSA]
